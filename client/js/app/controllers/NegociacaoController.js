@@ -24,6 +24,12 @@ class NegociacaoController {
           this._inputQuantidade.value,
           this._inputValor.value
         );
+
+        let form = document.querySelector('form');
+        form.reset();
+        this._inputData.focus();
+
         console.log(negociacao);
+        return negociacao;
     }
 }
