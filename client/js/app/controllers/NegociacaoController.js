@@ -16,8 +16,6 @@ class NegociacaoController {
 
         this._listaNegociacoes.adiciona(this._criaNegociacao());
         this._limpaFormulario();
-
-        console.log(this._listaNegociacoes.negociacoes);
     }
 
     _criaNegociacao(){
@@ -30,7 +28,7 @@ class NegociacaoController {
     }
 
     _limpaFormulario(){
-        
+
         let form = document.querySelector('form');
         form.reset();
         this._inputData.focus();
