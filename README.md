@@ -1,5 +1,5 @@
-# JavaScript avanÁado I
+# JavaScript avan√ßado II
 
-## ES6, orientaÁ„o a objetos e padrıes de projetos
+## ES6, orienta√ß√£o a objetos e padr√µes de projetos
 
-RepositÛrio do curso de Javascript AvanÁado 1, oferecido pela Alura.
+Reposit√≥rio do curso de Javascript Avan√ßado 2, oferecido pela Alura.
