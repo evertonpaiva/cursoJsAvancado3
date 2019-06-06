@@ -11,8 +11,9 @@ class ProxyFactory {
                     return function () {
 
                         console.log(`interceptando ${prop}`);
-                        Reflect.apply(target[prop], target, arguments);
-                        return acao(target);
+                        let retorno = Reflect.apply(target[prop], target, arguments);
+                        acao(target);
+                        return retorno;
                     }
                 }
 
@@ -21,12 +22,11 @@ class ProxyFactory {
 
             set(target, prop, value, receiver) {
 
-                if(props.includes(prop)){
+                let retorno = Reflect.set(target, prop, value, receiver);
+                if(props.includes(prop))
                     acao(target);
-                }
 
-                return Reflect.set(target, prop, value, receiver);
-
+                return retorno;
             }
         });
     }
