@@ -4,7 +4,6 @@ class NegociacaoController {
 
         let $ = document.querySelector.bind(document);
 
-        this._ordemAtual = '';
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
@@ -20,6 +19,16 @@ class NegociacaoController {
             new MensagemView($('#mensagemView')),
             'texto'
         );
+
+        this._ordemAtual = '';
+
+        ConnectionFactory
+            .getConnection()
+            .then(connection => new NegociacaoDao(connection))
+            .then(dao => dao.listaTodos())
+            .then(negociacoes =>
+                negociacoes.forEach(negociacao =>
+                    this._listaNegociacoes.adiciona(negociacao)));
     }
 
     adiciona(event) {
